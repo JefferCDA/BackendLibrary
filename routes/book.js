@@ -7,6 +7,7 @@ const {
   createBook,
   updateBook,
   deleteBook,
+  pagination,
 } = require("../controllers/book");
 
 route.route('/')
@@ -17,5 +18,7 @@ route.route('/:id')
     .get(getBookById)
     .put(updateBook)
     .delete(deleteBook)
-
+    
+route.route('/pagination')
+    .post(pagination)
 module.exports = route;
